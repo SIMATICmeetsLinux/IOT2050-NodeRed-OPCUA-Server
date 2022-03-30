@@ -18,7 +18,7 @@
 
 Follow [SIMATIC_IOT2050_Setting_up.md](https://github.com/SIMATICmeetsLinux/IOT2050-SmartFarming-Application/blob/main/docs/SIMATIC_IOT2050_setting_up.md) for the following steps:
 
-- Installing the SD-Card Example Image (in this example the image V1.1.1 was used)
+- Installing the SD-Card Example Image (in this example the image V1.2.1 was used)
 - First commissioning of the SIMATIC IOT2050: Remote access with Putty SSH Connection
 - Working internet connection on the IOT2050 (only necessary [if not all required packages in Node-Red are installed](#required-packages))
 
