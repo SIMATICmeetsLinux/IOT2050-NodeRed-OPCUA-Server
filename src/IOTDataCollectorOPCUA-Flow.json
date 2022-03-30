@@ -1,0 +1,3153 @@
+[
+    {
+        "id": "93ffc0ab.75647",
+        "type": "subflow",
+        "name": "Subflow OPC UA",
+        "info": "",
+        "category": "",
+        "in": [
+            {
+                "x": 220,
+                "y": 80,
+                "wires": [
+                    {
+                        "id": "4ec01e92.bb7e1"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 660,
+                "y": 80,
+                "wires": [
+                    {
+                        "id": "28e42fe8.b5911",
+                        "port": 0
+                    }
+                ]
+            },
+            {
+                "x": 1000,
+                "y": 80,
+                "wires": [
+                    {
+                        "id": "6886a120.5081c",
+                        "port": 0
+                    }
+                ]
+            },
+            {
+                "x": 1000,
+                "y": 120,
+                "wires": [
+                    {
+                        "id": "226ca384.7f55cc",
+                        "port": 0
+                    }
+                ]
+            },
+            {
+                "x": 680,
+                "y": 140,
+                "wires": [
+                    {
+                        "id": "9f94eb3.35c4c18",
+                        "port": 0
+                    }
+                ]
+            },
+            {
+                "x": 1000,
+                "y": 160,
+                "wires": [
+                    {
+                        "id": "eb514761.bd6be8",
+                        "port": 0
+                    }
+                ]
+            },
+            {
+                "x": 1000,
+                "y": 200,
+                "wires": [
+                    {
+                        "id": "8de1cd77.e1e95",
+                        "port": 0
+                    }
+                ]
+            },
+            {
+                "x": 680,
+                "y": 200,
+                "wires": [
+                    {
+                        "id": "e484afbb.e8d98",
+                        "port": 0
+                    }
+                ]
+            }
+        ],
+        "env": [],
+        "color": "#DDAA99"
+    },
+    {
+        "id": "4ec01e92.bb7e1",
+        "type": "delay",
+        "z": "93ffc0ab.75647",
+        "name": "Delay 1s",
+        "pauseType": "delay",
+        "timeout": "1",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 360,
+        "y": 80,
+        "wires": [
+            [
+                "28e42fe8.b5911"
+            ]
+        ]
+    },
+    {
+        "id": "28e42fe8.b5911",
+        "type": "change",
+        "z": "93ffc0ab.75647",
+        "name": "Set Object",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{ \"opcuaCommand\": \"setFolder\" }",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "ns=5;s=IOTData",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 510,
+        "y": 80,
+        "wires": [
+            [
+                "acbd2051.9f061"
+            ]
+        ]
+    },
+    {
+        "id": "cfbe7953.6537f8",
+        "type": "delay",
+        "z": "93ffc0ab.75647",
+        "name": "Delay 1s",
+        "pauseType": "delay",
+        "timeout": "1",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 720,
+        "y": 80,
+        "wires": [
+            [
+                "6886a120.5081c"
+            ]
+        ]
+    },
+    {
+        "id": "6886a120.5081c",
+        "type": "change",
+        "z": "93ffc0ab.75647",
+        "name": "AddBOOL",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{ \"opcuaCommand\": \"addVariable\" }",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "ns=5;s=OPCUA.Bool;datatype=Boolean",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 860,
+        "y": 80,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "8b3a9258.78f89",
+        "type": "delay",
+        "z": "93ffc0ab.75647",
+        "name": "Delay 2s",
+        "pauseType": "delay",
+        "timeout": "2",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 720,
+        "y": 120,
+        "wires": [
+            [
+                "226ca384.7f55cc"
+            ]
+        ]
+    },
+    {
+        "id": "226ca384.7f55cc",
+        "type": "change",
+        "z": "93ffc0ab.75647",
+        "name": "AddREAL",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{ \"opcuaCommand\": \"addVariable\" }",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "ns=5;s=OPCUA.Real;datatype=Float",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 860,
+        "y": 120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "79e997a2.05fc18",
+        "type": "delay",
+        "z": "93ffc0ab.75647",
+        "name": "Delay 3s",
+        "pauseType": "delay",
+        "timeout": "3",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 720,
+        "y": 160,
+        "wires": [
+            [
+                "eb514761.bd6be8"
+            ]
+        ]
+    },
+    {
+        "id": "eb514761.bd6be8",
+        "type": "change",
+        "z": "93ffc0ab.75647",
+        "name": "AddINT",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{ \"opcuaCommand\": \"addVariable\" }",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "ns=5;s=OPCUA.Int;datatype=Int32",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 860,
+        "y": 160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "dd07749f.a2d2f8",
+        "type": "delay",
+        "z": "93ffc0ab.75647",
+        "name": "Delay 4s",
+        "pauseType": "delay",
+        "timeout": "4",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 720,
+        "y": 200,
+        "wires": [
+            [
+                "8de1cd77.e1e95"
+            ]
+        ]
+    },
+    {
+        "id": "8de1cd77.e1e95",
+        "type": "change",
+        "z": "93ffc0ab.75647",
+        "name": "AddTIME",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{ \"opcuaCommand\": \"addVariable\" }",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "ns=5;s=OPCUA.Time;datatype=DateTime",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 860,
+        "y": 200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9f94eb3.35c4c18",
+        "type": "change",
+        "z": "93ffc0ab.75647",
+        "name": "Create Object",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{ \"opcuaCommand\": \"addFolder\" }",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "ns=5;s=OPCUA",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 520,
+        "y": 140,
+        "wires": [
+            [
+                "95df3c61.a020d"
+            ]
+        ]
+    },
+    {
+        "id": "acbd2051.9f061",
+        "type": "delay",
+        "z": "93ffc0ab.75647",
+        "name": "Delay 1s",
+        "pauseType": "delay",
+        "timeout": "1",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 360,
+        "y": 140,
+        "wires": [
+            [
+                "9f94eb3.35c4c18"
+            ]
+        ]
+    },
+    {
+        "id": "95df3c61.a020d",
+        "type": "delay",
+        "z": "93ffc0ab.75647",
+        "name": "Delay 1s",
+        "pauseType": "delay",
+        "timeout": "1",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 380,
+        "y": 200,
+        "wires": [
+            [
+                "e484afbb.e8d98"
+            ]
+        ]
+    },
+    {
+        "id": "e484afbb.e8d98",
+        "type": "change",
+        "z": "93ffc0ab.75647",
+        "name": "Set Object",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{ \"opcuaCommand\": \"setFolder\" }",
+                "tot": "json"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 530,
+        "y": 200,
+        "wires": [
+            [
+                "cfbe7953.6537f8",
+                "8b3a9258.78f89",
+                "79e997a2.05fc18",
+                "dd07749f.a2d2f8"
+            ]
+        ]
+    },
+    {
+        "id": "292047a1.c4f448",
+        "type": "comment",
+        "z": "93ffc0ab.75647",
+        "name": "OPC UA",
+        "info": "",
+        "x": 200,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "22707877.303a28",
+        "type": "subflow",
+        "name": "Subflow S7",
+        "info": "",
+        "category": "",
+        "in": [
+            {
+                "x": 220,
+                "y": 80,
+                "wires": [
+                    {
+                        "id": "1916365b.24adda"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 660,
+                "y": 80,
+                "wires": [
+                    {
+                        "id": "fd31da52.0f5788",
+                        "port": 0
+                    }
+                ]
+            },
+            {
+                "x": 1000,
+                "y": 80,
+                "wires": [
+                    {
+                        "id": "7ae2683d.4ab378",
+                        "port": 0
+                    }
+                ]
+            },
+            {
+                "x": 1000,
+                "y": 120,
+                "wires": [
+                    {
+                        "id": "c574b4dd.2635a8",
+                        "port": 0
+                    }
+                ]
+            },
+            {
+                "x": 680,
+                "y": 140,
+                "wires": [
+                    {
+                        "id": "62b4c4a4.338fdc",
+                        "port": 0
+                    }
+                ]
+            },
+            {
+                "x": 1000,
+                "y": 160,
+                "wires": [
+                    {
+                        "id": "8465b21e.d255d",
+                        "port": 0
+                    }
+                ]
+            },
+            {
+                "x": 1000,
+                "y": 200,
+                "wires": [
+                    {
+                        "id": "3b79f63.4b0870a",
+                        "port": 0
+                    }
+                ]
+            },
+            {
+                "x": 680,
+                "y": 200,
+                "wires": [
+                    {
+                        "id": "920e640f.963e98",
+                        "port": 0
+                    }
+                ]
+            }
+        ],
+        "env": [],
+        "color": "#DDAA99"
+    },
+    {
+        "id": "1916365b.24adda",
+        "type": "delay",
+        "z": "22707877.303a28",
+        "name": "Delay 1s",
+        "pauseType": "delay",
+        "timeout": "1",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 360,
+        "y": 80,
+        "wires": [
+            [
+                "fd31da52.0f5788"
+            ]
+        ]
+    },
+    {
+        "id": "fd31da52.0f5788",
+        "type": "change",
+        "z": "22707877.303a28",
+        "name": "Set Object",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{ \"opcuaCommand\": \"setFolder\" }",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "ns=5;s=IOTData",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 510,
+        "y": 80,
+        "wires": [
+            [
+                "b1d167a1.f24888"
+            ]
+        ]
+    },
+    {
+        "id": "99b14afb.93f868",
+        "type": "delay",
+        "z": "22707877.303a28",
+        "name": "Delay 1s",
+        "pauseType": "delay",
+        "timeout": "1",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 720,
+        "y": 80,
+        "wires": [
+            [
+                "7ae2683d.4ab378"
+            ]
+        ]
+    },
+    {
+        "id": "7ae2683d.4ab378",
+        "type": "change",
+        "z": "22707877.303a28",
+        "name": "AddBOOL",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{ \"opcuaCommand\": \"addVariable\" }",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "ns=5;s=S7.Bool;datatype=Boolean",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 860,
+        "y": 80,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d1e35c65.8e3ac",
+        "type": "delay",
+        "z": "22707877.303a28",
+        "name": "Delay 2s",
+        "pauseType": "delay",
+        "timeout": "2",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 720,
+        "y": 120,
+        "wires": [
+            [
+                "c574b4dd.2635a8"
+            ]
+        ]
+    },
+    {
+        "id": "c574b4dd.2635a8",
+        "type": "change",
+        "z": "22707877.303a28",
+        "name": "AddREAL",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{ \"opcuaCommand\": \"addVariable\" }",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "ns=5;s=S7.Real;datatype=Float",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 860,
+        "y": 120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4e3a1eb6.0dbec",
+        "type": "delay",
+        "z": "22707877.303a28",
+        "name": "Delay 3s",
+        "pauseType": "delay",
+        "timeout": "3",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 720,
+        "y": 160,
+        "wires": [
+            [
+                "8465b21e.d255d"
+            ]
+        ]
+    },
+    {
+        "id": "8465b21e.d255d",
+        "type": "change",
+        "z": "22707877.303a28",
+        "name": "AddINT",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{ \"opcuaCommand\": \"addVariable\" }",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "ns=5;s=S7.Int;datatype=Int32",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 860,
+        "y": 160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "5decb730.091058",
+        "type": "delay",
+        "z": "22707877.303a28",
+        "name": "Delay 4s",
+        "pauseType": "delay",
+        "timeout": "4",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 720,
+        "y": 200,
+        "wires": [
+            [
+                "3b79f63.4b0870a"
+            ]
+        ]
+    },
+    {
+        "id": "3b79f63.4b0870a",
+        "type": "change",
+        "z": "22707877.303a28",
+        "name": "AddTIME",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{ \"opcuaCommand\": \"addVariable\" }",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "ns=5;s=S7.Time;datatype=DateTime",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 860,
+        "y": 200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "62b4c4a4.338fdc",
+        "type": "change",
+        "z": "22707877.303a28",
+        "name": "Create Object",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{ \"opcuaCommand\": \"addFolder\" }",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "ns=5;s=S7",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 520,
+        "y": 140,
+        "wires": [
+            [
+                "244b6fef.38ff7"
+            ]
+        ]
+    },
+    {
+        "id": "b1d167a1.f24888",
+        "type": "delay",
+        "z": "22707877.303a28",
+        "name": "Delay 1s",
+        "pauseType": "delay",
+        "timeout": "1",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 360,
+        "y": 140,
+        "wires": [
+            [
+                "62b4c4a4.338fdc"
+            ]
+        ]
+    },
+    {
+        "id": "244b6fef.38ff7",
+        "type": "delay",
+        "z": "22707877.303a28",
+        "name": "Delay 1s",
+        "pauseType": "delay",
+        "timeout": "1",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 380,
+        "y": 200,
+        "wires": [
+            [
+                "920e640f.963e98"
+            ]
+        ]
+    },
+    {
+        "id": "920e640f.963e98",
+        "type": "change",
+        "z": "22707877.303a28",
+        "name": "Set Object",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{ \"opcuaCommand\": \"setFolder\" }",
+                "tot": "json"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 530,
+        "y": 200,
+        "wires": [
+            [
+                "99b14afb.93f868",
+                "d1e35c65.8e3ac",
+                "4e3a1eb6.0dbec",
+                "5decb730.091058"
+            ]
+        ]
+    },
+    {
+        "id": "165a6310.d434cd",
+        "type": "comment",
+        "z": "22707877.303a28",
+        "name": "S7",
+        "info": "",
+        "x": 190,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "f149fb7e.880d38",
+        "type": "subflow",
+        "name": "Subflow Modbus",
+        "info": "",
+        "category": "",
+        "in": [
+            {
+                "x": 220,
+                "y": 80,
+                "wires": [
+                    {
+                        "id": "c04cb03d.f9307"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 660,
+                "y": 80,
+                "wires": [
+                    {
+                        "id": "f15667fb.38bce8",
+                        "port": 0
+                    }
+                ]
+            },
+            {
+                "x": 1000,
+                "y": 80,
+                "wires": [
+                    {
+                        "id": "8f699c6e.7947b",
+                        "port": 0
+                    }
+                ]
+            },
+            {
+                "x": 1000,
+                "y": 120,
+                "wires": [
+                    {
+                        "id": "845d42fc.08539",
+                        "port": 0
+                    }
+                ]
+            },
+            {
+                "x": 680,
+                "y": 140,
+                "wires": [
+                    {
+                        "id": "3b65cc7.bca9734",
+                        "port": 0
+                    }
+                ]
+            },
+            {
+                "x": 1000,
+                "y": 160,
+                "wires": [
+                    {
+                        "id": "95aaf8c4.8b19a8",
+                        "port": 0
+                    }
+                ]
+            },
+            {
+                "x": 1000,
+                "y": 200,
+                "wires": [
+                    {
+                        "id": "949fad0c.66718",
+                        "port": 0
+                    }
+                ]
+            },
+            {
+                "x": 680,
+                "y": 200,
+                "wires": [
+                    {
+                        "id": "ffbff88b.1bef78",
+                        "port": 0
+                    }
+                ]
+            }
+        ],
+        "env": [],
+        "color": "#DDAA99"
+    },
+    {
+        "id": "c04cb03d.f9307",
+        "type": "delay",
+        "z": "f149fb7e.880d38",
+        "name": "Delay 1s",
+        "pauseType": "delay",
+        "timeout": "1",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 360,
+        "y": 80,
+        "wires": [
+            [
+                "f15667fb.38bce8"
+            ]
+        ]
+    },
+    {
+        "id": "f15667fb.38bce8",
+        "type": "change",
+        "z": "f149fb7e.880d38",
+        "name": "Set Object",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{ \"opcuaCommand\": \"setFolder\" }",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "ns=5;s=IOTData",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 510,
+        "y": 80,
+        "wires": [
+            [
+                "85021755.1ef388"
+            ]
+        ]
+    },
+    {
+        "id": "c97ef4e4.d24e98",
+        "type": "delay",
+        "z": "f149fb7e.880d38",
+        "name": "Delay 1s",
+        "pauseType": "delay",
+        "timeout": "1",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 720,
+        "y": 80,
+        "wires": [
+            [
+                "8f699c6e.7947b"
+            ]
+        ]
+    },
+    {
+        "id": "8f699c6e.7947b",
+        "type": "change",
+        "z": "f149fb7e.880d38",
+        "name": "AddBOOL",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{ \"opcuaCommand\": \"addVariable\" }",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "ns=5;s=Modbus.Bool;datatype=Boolean",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 860,
+        "y": 80,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "22635845.d09138",
+        "type": "delay",
+        "z": "f149fb7e.880d38",
+        "name": "Delay 2s",
+        "pauseType": "delay",
+        "timeout": "2",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 720,
+        "y": 120,
+        "wires": [
+            [
+                "845d42fc.08539"
+            ]
+        ]
+    },
+    {
+        "id": "845d42fc.08539",
+        "type": "change",
+        "z": "f149fb7e.880d38",
+        "name": "AddREAL",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{ \"opcuaCommand\": \"addVariable\" }",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "ns=5;s=Modbus.Real;datatype=Float",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 860,
+        "y": 120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "73e7a3ac.3fecac",
+        "type": "delay",
+        "z": "f149fb7e.880d38",
+        "name": "Delay 3s",
+        "pauseType": "delay",
+        "timeout": "3",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 720,
+        "y": 160,
+        "wires": [
+            [
+                "95aaf8c4.8b19a8"
+            ]
+        ]
+    },
+    {
+        "id": "95aaf8c4.8b19a8",
+        "type": "change",
+        "z": "f149fb7e.880d38",
+        "name": "AddINT",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{ \"opcuaCommand\": \"addVariable\" }",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "ns=5;s=Modbus.Int;datatype=Int32",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 860,
+        "y": 160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ff424909.928df8",
+        "type": "delay",
+        "z": "f149fb7e.880d38",
+        "name": "Delay 4s",
+        "pauseType": "delay",
+        "timeout": "4",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 720,
+        "y": 200,
+        "wires": [
+            [
+                "949fad0c.66718"
+            ]
+        ]
+    },
+    {
+        "id": "949fad0c.66718",
+        "type": "change",
+        "z": "f149fb7e.880d38",
+        "name": "AddTIME",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{ \"opcuaCommand\": \"addVariable\" }",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "ns=5;s=Modbus.Time;datatype=DateTime",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 860,
+        "y": 200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3b65cc7.bca9734",
+        "type": "change",
+        "z": "f149fb7e.880d38",
+        "name": "Create Object",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{ \"opcuaCommand\": \"addFolder\" }",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "ns=5;s=Modbus",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 520,
+        "y": 140,
+        "wires": [
+            [
+                "3f306573.c9aaca"
+            ]
+        ]
+    },
+    {
+        "id": "85021755.1ef388",
+        "type": "delay",
+        "z": "f149fb7e.880d38",
+        "name": "Delay 1s",
+        "pauseType": "delay",
+        "timeout": "1",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 360,
+        "y": 140,
+        "wires": [
+            [
+                "3b65cc7.bca9734"
+            ]
+        ]
+    },
+    {
+        "id": "3f306573.c9aaca",
+        "type": "delay",
+        "z": "f149fb7e.880d38",
+        "name": "Delay 1s",
+        "pauseType": "delay",
+        "timeout": "1",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 380,
+        "y": 200,
+        "wires": [
+            [
+                "ffbff88b.1bef78"
+            ]
+        ]
+    },
+    {
+        "id": "ffbff88b.1bef78",
+        "type": "change",
+        "z": "f149fb7e.880d38",
+        "name": "Set Object",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{ \"opcuaCommand\": \"setFolder\" }",
+                "tot": "json"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 530,
+        "y": 200,
+        "wires": [
+            [
+                "c97ef4e4.d24e98",
+                "22635845.d09138",
+                "73e7a3ac.3fecac",
+                "ff424909.928df8"
+            ]
+        ]
+    },
+    {
+        "id": "70e2233d.77763c",
+        "type": "comment",
+        "z": "f149fb7e.880d38",
+        "name": "Modbus",
+        "info": "",
+        "x": 190,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "52d34f71.1aebd",
+        "type": "complete",
+        "z": "f149fb7e.880d38",
+        "name": "",
+        "scope": [],
+        "uncaught": false,
+        "x": 400,
+        "y": 300,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "fd4b5ffea49ae0ba",
+        "type": "tab",
+        "label": "IOT2050 Communication Example",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "37ac700b82d5c260",
+        "type": "s7 in",
+        "z": "fd4b5ffea49ae0ba",
+        "endpoint": "6f4c5d9bcfd9c087",
+        "mode": "single",
+        "variable": "IOT_BOOL",
+        "diff": true,
+        "name": "S7Com S7-1500 BOOL",
+        "x": 180,
+        "y": 1020,
+        "wires": [
+            [
+                "08dbe4f133daafb9"
+            ]
+        ]
+    },
+    {
+        "id": "ea4b58d675f8b6dd",
+        "type": "comment",
+        "z": "fd4b5ffea49ae0ba",
+        "name": "Write Values from S7Communication",
+        "info": "",
+        "x": 200,
+        "y": 980,
+        "wires": []
+    },
+    {
+        "id": "42884436d25df976",
+        "type": "OpcUa-Client",
+        "z": "fd4b5ffea49ae0ba",
+        "endpoint": "08630897d509378a",
+        "action": "read",
+        "deadbandvalue": "",
+        "time": 10,
+        "timeUnit": "s",
+        "localfile": "",
+        "localkeyfile": "",
+        "name": "",
+        "x": 580,
+        "y": 540,
+        "wires": [
+            [
+                "f5e48899cba3aba1"
+            ]
+        ]
+    },
+    {
+        "id": "6f07c621a8bea55c",
+        "type": "inject",
+        "z": "fd4b5ffea49ae0ba",
+        "name": "Refresh Rate =  1sec",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "str",
+        "x": 200,
+        "y": 540,
+        "wires": [
+            [
+                "8ac65764342fd010",
+                "9561517a6bd70bd3",
+                "d432772954ca8634",
+                "3d5e5b8fcf4e7baf"
+            ]
+        ]
+    },
+    {
+        "id": "5e9c463a2bad58bc",
+        "type": "modbus-getter",
+        "z": "fd4b5ffea49ae0ba",
+        "name": "ModbusTCP S7-1500",
+        "showStatusActivities": true,
+        "showErrors": true,
+        "logIOActivities": false,
+        "unitid": "1",
+        "dataType": "HoldingRegister",
+        "adr": "0",
+        "quantity": "20",
+        "server": "0debae5f533cb85b",
+        "useIOFile": false,
+        "ioFile": "",
+        "useIOForPayload": false,
+        "emptyMsgOnFail": false,
+        "keepMsgProperties": false,
+        "x": 240,
+        "y": 1560,
+        "wires": [
+            [],
+            [
+                "22f3f5571fa11010"
+            ]
+        ]
+    },
+    {
+        "id": "3c8f680a4373f4e0",
+        "type": "inject",
+        "z": "fd4b5ffea49ae0ba",
+        "name": "Refresh Rate= 1sec.",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 200,
+        "y": 1500,
+        "wires": [
+            [
+                "5e9c463a2bad58bc"
+            ]
+        ]
+    },
+    {
+        "id": "22f3f5571fa11010",
+        "type": "function",
+        "z": "fd4b5ffea49ae0ba",
+        "name": "Convert To S7 Values",
+        "func": "\nmsg.payload.IOT_BOOL = msg.payload.data[0] >0 ? true : false;\n\nvar data = [];\ndata[0]=msg.payload.buffer[2];\ndata[1]=msg.payload.buffer[1];\n\n\n// Create a buffer\nvar buf = new ArrayBuffer(4);\n// Create a data view of it\nvar view = new DataView(buf);\n/*\ndata.forEach(function (b, i) {\n    view.setUint8(i, b);\n});\n*/\ndata.forEach((element, index) => view.setUint8(index, element));\nmsg.payload.IOT_INT = view.getInt16(0,true);\n\ndata[0]=msg.payload.buffer[5];\ndata[1]=msg.payload.buffer[4];\ndata[2]=msg.payload.buffer[7];\ndata[3]=msg.payload.buffer[6];\ndata.forEach(function (b, i) {\n    view.setUint8(i, b);\n});\n\n// Read the bits as a float; note that by doing this, we're implicitly\n// converting it from a 32-bit float into JavaScript's native 64-bit double\nmsg.payload.IOT_REAL = view.getFloat32(0,true);\n\n\ndata[0]=msg.payload.buffer[9];\ndata[1]=msg.payload.buffer[8];\ndata[2]=msg.payload.buffer[11];\ndata[3]=msg.payload.buffer[10];\n\ndata.forEach(function (b, i) {\n    view.setUint8(i, b);\n});\n\nmsg.payload.IOT_TIME= view.getInt32(0,true);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 280,
+        "y": 1620,
+        "wires": [
+            [
+                "2a01506dcf8d4645",
+                "8faadaeff9953a49",
+                "676fce6652fea56e",
+                "8c47f4dc9dbd208a"
+            ]
+        ]
+    },
+    {
+        "id": "8ac65764342fd010",
+        "type": "OpcUa-Item",
+        "z": "fd4b5ffea49ae0ba",
+        "item": "ns=3;s=\"IOT_Data\".\"IOT_Bool\"",
+        "datatype": "Boolean",
+        "value": "",
+        "name": "IOT_BOOL",
+        "x": 410,
+        "y": 540,
+        "wires": [
+            [
+                "42884436d25df976"
+            ]
+        ]
+    },
+    {
+        "id": "9561517a6bd70bd3",
+        "type": "OpcUa-Item",
+        "z": "fd4b5ffea49ae0ba",
+        "item": "ns=3;s=\"IOT_Data\".\"IOT_Int\"",
+        "datatype": "Int16",
+        "value": "",
+        "name": "IOT_INT",
+        "x": 400,
+        "y": 620,
+        "wires": [
+            [
+                "856b10956b20a5ce"
+            ]
+        ]
+    },
+    {
+        "id": "856b10956b20a5ce",
+        "type": "OpcUa-Client",
+        "z": "fd4b5ffea49ae0ba",
+        "endpoint": "08630897d509378a",
+        "action": "read",
+        "deadbandvalue": "",
+        "time": 10,
+        "timeUnit": "s",
+        "localfile": "",
+        "localkeyfile": "",
+        "name": "",
+        "x": 580,
+        "y": 620,
+        "wires": [
+            [
+                "459d88d225c807e1"
+            ]
+        ]
+    },
+    {
+        "id": "d432772954ca8634",
+        "type": "OpcUa-Item",
+        "z": "fd4b5ffea49ae0ba",
+        "item": "ns=3;s=\"IOT_Data\".\"IOT_Real\"",
+        "datatype": "Float",
+        "value": "",
+        "name": "IOT_REAL",
+        "x": 410,
+        "y": 580,
+        "wires": [
+            [
+                "deb63c143525fe37"
+            ]
+        ]
+    },
+    {
+        "id": "deb63c143525fe37",
+        "type": "OpcUa-Client",
+        "z": "fd4b5ffea49ae0ba",
+        "endpoint": "08630897d509378a",
+        "action": "read",
+        "deadbandvalue": "",
+        "time": 10,
+        "timeUnit": "s",
+        "localfile": "",
+        "localkeyfile": "",
+        "name": "",
+        "x": 580,
+        "y": 580,
+        "wires": [
+            [
+                "0ab1e62ed8c75ad5"
+            ]
+        ]
+    },
+    {
+        "id": "51726a521bbcc531",
+        "type": "comment",
+        "z": "fd4b5ffea49ae0ba",
+        "name": "Write Values from S7 OPC UA",
+        "info": "",
+        "x": 186,
+        "y": 498,
+        "wires": []
+    },
+    {
+        "id": "93b20f39739f7ecf",
+        "type": "OpcUa-Server",
+        "z": "fd4b5ffea49ae0ba",
+        "port": "4840",
+        "name": "iot-opcua",
+        "endpoint": "",
+        "users": "",
+        "nodesetDir": "",
+        "autoAcceptUnknownCertificate": true,
+        "registerToDiscovery": false,
+        "constructDefaultAddressSpace": true,
+        "allowAnonymous": true,
+        "endpointNone": true,
+        "endpointSign": true,
+        "endpointSignEncrypt": true,
+        "endpointBasic128Rsa15": true,
+        "endpointBasic256": true,
+        "endpointBasic256Sha256": true,
+        "maxNodesPerBrowse": 0,
+        "maxNodesPerHistoryReadData": 0,
+        "maxNodesPerHistoryReadEvents": 0,
+        "maxNodesPerHistoryUpdateData": 0,
+        "maxNodesPerRead": "10",
+        "maxNodesPerWrite": "10",
+        "maxNodesPerMethodCall": 0,
+        "maxNodesPerRegisterNodes": 0,
+        "maxNodesPerNodeManagement": 0,
+        "maxMonitoredItemsPerCall": 0,
+        "maxNodesPerHistoryUpdateEvents": 0,
+        "maxNodesPerTranslateBrowsePathsToNodeIds": 0,
+        "x": 440,
+        "y": 220,
+        "wires": [
+            [
+                "f801f303063a1496"
+            ]
+        ]
+    },
+    {
+        "id": "f801f303063a1496",
+        "type": "debug",
+        "z": "fd4b5ffea49ae0ba",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 630,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "88745c7945d965f4",
+        "type": "inject",
+        "z": "fd4b5ffea49ae0ba",
+        "name": "buildStructure",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "www.testiot.com",
+        "payload": "{ \"opcuaCommand\": \"registerNamespace\" }",
+        "payloadType": "json",
+        "x": 170,
+        "y": 80,
+        "wires": [
+            [
+                "93b20f39739f7ecf",
+                "746276b38fe7ea46"
+            ]
+        ]
+    },
+    {
+        "id": "c38d5c2e72960655",
+        "type": "comment",
+        "z": "fd4b5ffea49ae0ba",
+        "name": "Building Structure in OPC UA -> Start once after deploying OPC UA Server",
+        "info": "",
+        "x": 320,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "3ea8b1f37266fd88",
+        "type": "comment",
+        "z": "fd4b5ffea49ae0ba",
+        "name": "OPC UA Server on opc.tcp://localhost:4840/",
+        "info": "",
+        "x": 550,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "e2586d1f9a37c00c",
+        "type": "change",
+        "z": "fd4b5ffea49ae0ba",
+        "name": "Create Object",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{ \"opcuaCommand\": \"addFolder\" }",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "ns=5;s=IOTData",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 480,
+        "y": 80,
+        "wires": [
+            [
+                "93b20f39739f7ecf",
+                "f9477f6047704aff"
+            ]
+        ]
+    },
+    {
+        "id": "746276b38fe7ea46",
+        "type": "delay",
+        "z": "fd4b5ffea49ae0ba",
+        "name": "Delay 1s",
+        "pauseType": "delay",
+        "timeout": "1",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 320,
+        "y": 80,
+        "wires": [
+            [
+                "e2586d1f9a37c00c"
+            ]
+        ]
+    },
+    {
+        "id": "f9477f6047704aff",
+        "type": "subflow:f149fb7e.880d38",
+        "z": "fd4b5ffea49ae0ba",
+        "name": "Modbus",
+        "env": [],
+        "x": 180,
+        "y": 160,
+        "wires": [
+            [
+                "93b20f39739f7ecf"
+            ],
+            [
+                "93b20f39739f7ecf"
+            ],
+            [
+                "93b20f39739f7ecf"
+            ],
+            [
+                "93b20f39739f7ecf"
+            ],
+            [
+                "93b20f39739f7ecf"
+            ],
+            [
+                "93b20f39739f7ecf",
+                "60bf3fe5dad00b7c"
+            ],
+            [
+                "93b20f39739f7ecf"
+            ]
+        ]
+    },
+    {
+        "id": "60bf3fe5dad00b7c",
+        "type": "subflow:22707877.303a28",
+        "z": "fd4b5ffea49ae0ba",
+        "name": "S7",
+        "env": [],
+        "x": 170,
+        "y": 280,
+        "wires": [
+            [
+                "93b20f39739f7ecf"
+            ],
+            [
+                "93b20f39739f7ecf"
+            ],
+            [
+                "93b20f39739f7ecf"
+            ],
+            [
+                "93b20f39739f7ecf"
+            ],
+            [
+                "93b20f39739f7ecf"
+            ],
+            [
+                "93b20f39739f7ecf",
+                "2bbee5a80d0749f4"
+            ],
+            [
+                "93b20f39739f7ecf"
+            ]
+        ]
+    },
+    {
+        "id": "2bbee5a80d0749f4",
+        "type": "subflow:93ffc0ab.75647",
+        "z": "fd4b5ffea49ae0ba",
+        "name": "OPC UA",
+        "env": [],
+        "x": 180,
+        "y": 400,
+        "wires": [
+            [
+                "93b20f39739f7ecf"
+            ],
+            [
+                "93b20f39739f7ecf"
+            ],
+            [
+                "93b20f39739f7ecf"
+            ],
+            [
+                "93b20f39739f7ecf"
+            ],
+            [
+                "93b20f39739f7ecf"
+            ],
+            [
+                "93b20f39739f7ecf"
+            ],
+            [
+                "93b20f39739f7ecf"
+            ]
+        ]
+    },
+    {
+        "id": "f5e48899cba3aba1",
+        "type": "OpcUa-Item",
+        "z": "fd4b5ffea49ae0ba",
+        "item": "ns=5;s=OPCUA.Bool",
+        "datatype": "Boolean",
+        "value": "",
+        "name": "WRITE-ITEM",
+        "x": 770,
+        "y": 540,
+        "wires": [
+            [
+                "d2efca532d2a0242"
+            ]
+        ]
+    },
+    {
+        "id": "459d88d225c807e1",
+        "type": "OpcUa-Item",
+        "z": "fd4b5ffea49ae0ba",
+        "item": "ns=5;s=OPCUA.Int",
+        "datatype": "Int32",
+        "value": "",
+        "name": "WRITE-ITEM",
+        "x": 770,
+        "y": 620,
+        "wires": [
+            [
+                "d2efca532d2a0242"
+            ]
+        ]
+    },
+    {
+        "id": "3ad4d78685501b30",
+        "type": "OpcUa-Client",
+        "z": "fd4b5ffea49ae0ba",
+        "endpoint": "a1f0d7db0323ab7e",
+        "action": "write",
+        "deadbandtype": "a",
+        "deadbandvalue": 1,
+        "time": 10,
+        "timeUnit": "s",
+        "certificate": "n",
+        "localfile": "",
+        "localkeyfile": "",
+        "securitymode": "None",
+        "securitypolicy": "None",
+        "folderName4PKI": "",
+        "name": "",
+        "x": 980,
+        "y": 1060,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "0ab1e62ed8c75ad5",
+        "type": "OpcUa-Item",
+        "z": "fd4b5ffea49ae0ba",
+        "item": "ns=5;s=OPCUA.Real",
+        "datatype": "Float",
+        "value": "",
+        "name": "WRITE-ITEM",
+        "x": 770,
+        "y": 580,
+        "wires": [
+            [
+                "d2efca532d2a0242"
+            ]
+        ]
+    },
+    {
+        "id": "bc4d1d4e9c66040e",
+        "type": "OpcUa-Item",
+        "z": "fd4b5ffea49ae0ba",
+        "item": "ns=5;s=OPCUA.Time",
+        "datatype": "DateTime",
+        "value": "",
+        "name": "WRITE-ITEM",
+        "x": 770,
+        "y": 660,
+        "wires": [
+            [
+                "d2efca532d2a0242"
+            ]
+        ]
+    },
+    {
+        "id": "1c4215f0b56b224d",
+        "type": "OpcUa-Client",
+        "z": "fd4b5ffea49ae0ba",
+        "endpoint": "a1f0d7db0323ab7e",
+        "action": "read",
+        "deadbandtype": "a",
+        "deadbandvalue": 1,
+        "time": 10,
+        "timeUnit": "s",
+        "certificate": "n",
+        "localfile": "",
+        "localkeyfile": "",
+        "securitymode": "None",
+        "securitypolicy": "None",
+        "name": "",
+        "x": 640,
+        "y": 840,
+        "wires": [
+            [
+                "9df9d84204dbfdae"
+            ]
+        ]
+    },
+    {
+        "id": "a140b8117f6eeeac",
+        "type": "OpcUa-Item",
+        "z": "fd4b5ffea49ae0ba",
+        "item": "ns=5;s=OPCUA.Bool",
+        "datatype": "Boolean",
+        "value": "",
+        "name": "READ-ITEM",
+        "x": 430,
+        "y": 780,
+        "wires": [
+            [
+                "1c4215f0b56b224d"
+            ]
+        ]
+    },
+    {
+        "id": "0bc9c2e06fb5d0e5",
+        "type": "inject",
+        "z": "fd4b5ffea49ae0ba",
+        "name": "Read Values ever 5s",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "5",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "str",
+        "x": 200,
+        "y": 780,
+        "wires": [
+            [
+                "a140b8117f6eeeac",
+                "653223a836fb8c33",
+                "bee4a4d153989a26",
+                "e9cd111dd8e38576"
+            ]
+        ]
+    },
+    {
+        "id": "653223a836fb8c33",
+        "type": "OpcUa-Item",
+        "z": "fd4b5ffea49ae0ba",
+        "item": "ns=5;s=OPCUA.Int",
+        "datatype": "Int32",
+        "value": "",
+        "name": "READ-ITEM",
+        "x": 430,
+        "y": 820,
+        "wires": [
+            [
+                "1c4215f0b56b224d"
+            ]
+        ]
+    },
+    {
+        "id": "bee4a4d153989a26",
+        "type": "OpcUa-Item",
+        "z": "fd4b5ffea49ae0ba",
+        "item": "ns=5;s=OPCUA.Real",
+        "datatype": "Float",
+        "value": "",
+        "name": "READ-ITEM",
+        "x": 430,
+        "y": 860,
+        "wires": [
+            [
+                "1c4215f0b56b224d"
+            ]
+        ]
+    },
+    {
+        "id": "e9cd111dd8e38576",
+        "type": "OpcUa-Item",
+        "z": "fd4b5ffea49ae0ba",
+        "item": "ns=5;s=OPCUA.Time",
+        "datatype": "DateTime",
+        "value": "",
+        "name": "READ-ITEM",
+        "x": 430,
+        "y": 900,
+        "wires": [
+            [
+                "1c4215f0b56b224d"
+            ]
+        ]
+    },
+    {
+        "id": "9df9d84204dbfdae",
+        "type": "join",
+        "z": "fd4b5ffea49ae0ba",
+        "name": "",
+        "mode": "custom",
+        "build": "array",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "",
+        "count": "4",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 830,
+        "y": 840,
+        "wires": [
+            [
+                "081d63d8603360f3"
+            ]
+        ]
+    },
+    {
+        "id": "ae6ffd5357fdf670",
+        "type": "debug",
+        "z": "fd4b5ffea49ae0ba",
+        "name": "Read Output OPC UA",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1300,
+        "y": 840,
+        "wires": []
+    },
+    {
+        "id": "730aab3b2edcfe01",
+        "type": "comment",
+        "z": "fd4b5ffea49ae0ba",
+        "name": "Read OPC UA Values from IOT2050 OPC UA",
+        "info": "",
+        "x": 230,
+        "y": 740,
+        "wires": []
+    },
+    {
+        "id": "081d63d8603360f3",
+        "type": "change",
+        "z": "fd4b5ffea49ae0ba",
+        "name": "name msg: OPC UA",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "OPC UA",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1040,
+        "y": 840,
+        "wires": [
+            [
+                "ae6ffd5357fdf670"
+            ]
+        ]
+    },
+    {
+        "id": "66f95b2d6dfa7548",
+        "type": "s7 in",
+        "z": "fd4b5ffea49ae0ba",
+        "endpoint": "6f4c5d9bcfd9c087",
+        "mode": "single",
+        "variable": "IOT_REAL",
+        "diff": true,
+        "name": "S7Com S7-1500 REAL",
+        "x": 180,
+        "y": 1060,
+        "wires": [
+            [
+                "bf163c9187a19624"
+            ]
+        ]
+    },
+    {
+        "id": "4d053a67910571b8",
+        "type": "s7 in",
+        "z": "fd4b5ffea49ae0ba",
+        "endpoint": "6f4c5d9bcfd9c087",
+        "mode": "single",
+        "variable": "IOT_INT",
+        "diff": true,
+        "name": "S7Com S7-1500 INT",
+        "x": 170,
+        "y": 1100,
+        "wires": [
+            [
+                "c7e1fb9c232f789a",
+                "1f790c6286d1cfa2"
+            ]
+        ]
+    },
+    {
+        "id": "08dbe4f133daafb9",
+        "type": "OpcUa-Item",
+        "z": "fd4b5ffea49ae0ba",
+        "item": "ns=5;s=S7.Bool",
+        "datatype": "Boolean",
+        "value": "",
+        "name": "WRITE-ITEM",
+        "x": 590,
+        "y": 1020,
+        "wires": [
+            [
+                "3ad4d78685501b30"
+            ]
+        ]
+    },
+    {
+        "id": "c7e1fb9c232f789a",
+        "type": "OpcUa-Item",
+        "z": "fd4b5ffea49ae0ba",
+        "item": "ns=5;s=S7.Int",
+        "datatype": "Int32",
+        "value": "",
+        "name": "WRITE-ITEM",
+        "x": 590,
+        "y": 1100,
+        "wires": [
+            [
+                "3ad4d78685501b30"
+            ]
+        ]
+    },
+    {
+        "id": "bf163c9187a19624",
+        "type": "OpcUa-Item",
+        "z": "fd4b5ffea49ae0ba",
+        "item": "ns=5;s=S7.Real",
+        "datatype": "Float",
+        "value": "",
+        "name": "WRITE-ITEM",
+        "x": 590,
+        "y": 1060,
+        "wires": [
+            [
+                "3ad4d78685501b30"
+            ]
+        ]
+    },
+    {
+        "id": "bc698b9b958f1c15",
+        "type": "OpcUa-Item",
+        "z": "fd4b5ffea49ae0ba",
+        "item": "ns=5;s=S7.Time",
+        "datatype": "DateTime",
+        "value": "",
+        "name": "WRITE-ITEM",
+        "x": 590,
+        "y": 1140,
+        "wires": [
+            [
+                "3ad4d78685501b30"
+            ]
+        ]
+    },
+    {
+        "id": "fde1c99fc4de162d",
+        "type": "OpcUa-Client",
+        "z": "fd4b5ffea49ae0ba",
+        "endpoint": "a1f0d7db0323ab7e",
+        "action": "read",
+        "deadbandtype": "a",
+        "deadbandvalue": 1,
+        "time": 10,
+        "timeUnit": "s",
+        "certificate": "n",
+        "localfile": "",
+        "localkeyfile": "",
+        "securitymode": "None",
+        "securitypolicy": "None",
+        "name": "",
+        "x": 640,
+        "y": 1320,
+        "wires": [
+            [
+                "d25aaae0c1ee6b13"
+            ]
+        ]
+    },
+    {
+        "id": "2cb89c068306fc0b",
+        "type": "OpcUa-Item",
+        "z": "fd4b5ffea49ae0ba",
+        "item": "ns=5;s=S7.Bool",
+        "datatype": "Boolean",
+        "value": "",
+        "name": "READ-ITEM",
+        "x": 430,
+        "y": 1260,
+        "wires": [
+            [
+                "fde1c99fc4de162d"
+            ]
+        ]
+    },
+    {
+        "id": "b964be8214534dbb",
+        "type": "inject",
+        "z": "fd4b5ffea49ae0ba",
+        "name": "Read Values ever 5s",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "5",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "str",
+        "x": 200,
+        "y": 1260,
+        "wires": [
+            [
+                "2cb89c068306fc0b",
+                "cbe1c761ef3c1aba",
+                "bcab1353cfc8d845",
+                "a24436d0bdc80f60"
+            ]
+        ]
+    },
+    {
+        "id": "cbe1c761ef3c1aba",
+        "type": "OpcUa-Item",
+        "z": "fd4b5ffea49ae0ba",
+        "item": "ns=5;s=S7.Int",
+        "datatype": "Int32",
+        "value": "",
+        "name": "READ-ITEM",
+        "x": 430,
+        "y": 1300,
+        "wires": [
+            [
+                "fde1c99fc4de162d"
+            ]
+        ]
+    },
+    {
+        "id": "bcab1353cfc8d845",
+        "type": "OpcUa-Item",
+        "z": "fd4b5ffea49ae0ba",
+        "item": "ns=5;s=S7.Real",
+        "datatype": "Float",
+        "value": "",
+        "name": "READ-ITEM",
+        "x": 430,
+        "y": 1340,
+        "wires": [
+            [
+                "fde1c99fc4de162d"
+            ]
+        ]
+    },
+    {
+        "id": "a24436d0bdc80f60",
+        "type": "OpcUa-Item",
+        "z": "fd4b5ffea49ae0ba",
+        "item": "ns=5;s=S7.Time",
+        "datatype": "DateTime",
+        "value": "",
+        "name": "READ-ITEM",
+        "x": 430,
+        "y": 1380,
+        "wires": [
+            [
+                "fde1c99fc4de162d"
+            ]
+        ]
+    },
+    {
+        "id": "d25aaae0c1ee6b13",
+        "type": "join",
+        "z": "fd4b5ffea49ae0ba",
+        "name": "",
+        "mode": "custom",
+        "build": "array",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "",
+        "count": "4",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 830,
+        "y": 1320,
+        "wires": [
+            [
+                "eadafca6740a6b85"
+            ]
+        ]
+    },
+    {
+        "id": "164c11f4143955fb",
+        "type": "debug",
+        "z": "fd4b5ffea49ae0ba",
+        "name": "Read Output S7Communication",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1330,
+        "y": 1320,
+        "wires": []
+    },
+    {
+        "id": "a2548427d8893be0",
+        "type": "comment",
+        "z": "fd4b5ffea49ae0ba",
+        "name": "Read S7Communication Values from IOT2050 OPC UA",
+        "info": "",
+        "x": 260,
+        "y": 1220,
+        "wires": []
+    },
+    {
+        "id": "eadafca6740a6b85",
+        "type": "change",
+        "z": "fd4b5ffea49ae0ba",
+        "name": "name msg: S7",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "S7",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1020,
+        "y": 1320,
+        "wires": [
+            [
+                "164c11f4143955fb"
+            ]
+        ]
+    },
+    {
+        "id": "4cb0db1170fee52f",
+        "type": "comment",
+        "z": "fd4b5ffea49ae0ba",
+        "name": "Write Values from Modbus",
+        "info": "",
+        "x": 170,
+        "y": 1460,
+        "wires": []
+    },
+    {
+        "id": "adc980a57987a319",
+        "type": "OpcUa-Client",
+        "z": "fd4b5ffea49ae0ba",
+        "endpoint": "a1f0d7db0323ab7e",
+        "action": "read",
+        "deadbandtype": "a",
+        "deadbandvalue": 1,
+        "time": 10,
+        "timeUnit": "s",
+        "certificate": "n",
+        "localfile": "",
+        "localkeyfile": "",
+        "securitymode": "None",
+        "securitypolicy": "None",
+        "name": "",
+        "x": 640,
+        "y": 1800,
+        "wires": [
+            [
+                "42484273ba1b066e"
+            ]
+        ]
+    },
+    {
+        "id": "f1583e521edeb9bc",
+        "type": "OpcUa-Item",
+        "z": "fd4b5ffea49ae0ba",
+        "item": "ns=5;s=Modbus.Bool",
+        "datatype": "Boolean",
+        "value": "",
+        "name": "READ-ITEM",
+        "x": 430,
+        "y": 1740,
+        "wires": [
+            [
+                "adc980a57987a319"
+            ]
+        ]
+    },
+    {
+        "id": "b3330bfc93e03146",
+        "type": "OpcUa-Item",
+        "z": "fd4b5ffea49ae0ba",
+        "item": "ns=5;s=Modbus.Int",
+        "datatype": "Int32",
+        "value": "",
+        "name": "READ-ITEM",
+        "x": 430,
+        "y": 1780,
+        "wires": [
+            [
+                "adc980a57987a319"
+            ]
+        ]
+    },
+    {
+        "id": "f32b213dd8dba5ba",
+        "type": "OpcUa-Item",
+        "z": "fd4b5ffea49ae0ba",
+        "item": "ns=5;s=Modbus.Real",
+        "datatype": "Float",
+        "value": "",
+        "name": "READ-ITEM",
+        "x": 430,
+        "y": 1820,
+        "wires": [
+            [
+                "adc980a57987a319"
+            ]
+        ]
+    },
+    {
+        "id": "e8376765711ef07a",
+        "type": "OpcUa-Item",
+        "z": "fd4b5ffea49ae0ba",
+        "item": "ns=5;s=Modbus.Time",
+        "datatype": "DateTime",
+        "value": "",
+        "name": "READ-ITEM",
+        "x": 430,
+        "y": 1860,
+        "wires": [
+            [
+                "adc980a57987a319"
+            ]
+        ]
+    },
+    {
+        "id": "42484273ba1b066e",
+        "type": "join",
+        "z": "fd4b5ffea49ae0ba",
+        "name": "",
+        "mode": "custom",
+        "build": "array",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "",
+        "count": "4",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 830,
+        "y": 1800,
+        "wires": [
+            [
+                "4e1d07da3ba7f3cb"
+            ]
+        ]
+    },
+    {
+        "id": "e52c0c67bdbdfd93",
+        "type": "debug",
+        "z": "fd4b5ffea49ae0ba",
+        "name": "Read Output Modbus",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1300,
+        "y": 1800,
+        "wires": []
+    },
+    {
+        "id": "4e1d07da3ba7f3cb",
+        "type": "change",
+        "z": "fd4b5ffea49ae0ba",
+        "name": "name msg: Modbus",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "Modbus",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1030,
+        "y": 1800,
+        "wires": [
+            [
+                "e52c0c67bdbdfd93"
+            ]
+        ]
+    },
+    {
+        "id": "1c1e28fb6ee22bea",
+        "type": "inject",
+        "z": "fd4b5ffea49ae0ba",
+        "name": "Read Values ever 5s",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "5",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "str",
+        "x": 200,
+        "y": 1740,
+        "wires": [
+            [
+                "f1583e521edeb9bc",
+                "b3330bfc93e03146",
+                "f32b213dd8dba5ba",
+                "e8376765711ef07a"
+            ]
+        ]
+    },
+    {
+        "id": "a34819b1809d53c9",
+        "type": "comment",
+        "z": "fd4b5ffea49ae0ba",
+        "name": "Read Modbus Values from IOT2050 OPC UA",
+        "info": "",
+        "x": 230,
+        "y": 1700,
+        "wires": []
+    },
+    {
+        "id": "57936ee5f2397bf0",
+        "type": "OpcUa-Item",
+        "z": "fd4b5ffea49ae0ba",
+        "item": "ns=5;s=Modbus.Bool",
+        "datatype": "Boolean",
+        "value": "",
+        "name": "WRITE-ITEM",
+        "x": 730,
+        "y": 1500,
+        "wires": [
+            [
+                "1cc309746187aaac"
+            ]
+        ]
+    },
+    {
+        "id": "6c06fffc0891a89c",
+        "type": "OpcUa-Item",
+        "z": "fd4b5ffea49ae0ba",
+        "item": "ns=5;s=Modbus.Int",
+        "datatype": "Int32",
+        "value": "",
+        "name": "WRITE-ITEM",
+        "x": 730,
+        "y": 1580,
+        "wires": [
+            [
+                "1cc309746187aaac"
+            ]
+        ]
+    },
+    {
+        "id": "fd5be26cf09c52b5",
+        "type": "OpcUa-Item",
+        "z": "fd4b5ffea49ae0ba",
+        "item": "ns=5;s=Modbus.Real",
+        "datatype": "Float",
+        "value": "",
+        "name": "WRITE-ITEM",
+        "x": 730,
+        "y": 1540,
+        "wires": [
+            [
+                "1cc309746187aaac"
+            ]
+        ]
+    },
+    {
+        "id": "2a01506dcf8d4645",
+        "type": "change",
+        "z": "fd4b5ffea49ae0ba",
+        "name": "Bool Output",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.IOT_BOOL",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 530,
+        "y": 1500,
+        "wires": [
+            [
+                "57936ee5f2397bf0"
+            ]
+        ]
+    },
+    {
+        "id": "8faadaeff9953a49",
+        "type": "change",
+        "z": "fd4b5ffea49ae0ba",
+        "name": "Real Output",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.IOT_REAL",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 530,
+        "y": 1540,
+        "wires": [
+            [
+                "fd5be26cf09c52b5"
+            ]
+        ]
+    },
+    {
+        "id": "676fce6652fea56e",
+        "type": "change",
+        "z": "fd4b5ffea49ae0ba",
+        "name": "Real Output",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.IOT_INT",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 530,
+        "y": 1580,
+        "wires": [
+            [
+                "6c06fffc0891a89c"
+            ]
+        ]
+    },
+    {
+        "id": "82dee566794d8fcf",
+        "type": "OpcUa-Item",
+        "z": "fd4b5ffea49ae0ba",
+        "item": "ns=5;s=Modbus.Time",
+        "datatype": "DateTime",
+        "value": "",
+        "name": "WRITE-ITEM",
+        "x": 730,
+        "y": 1620,
+        "wires": [
+            [
+                "1cc309746187aaac"
+            ]
+        ]
+    },
+    {
+        "id": "3d5e5b8fcf4e7baf",
+        "type": "change",
+        "z": "fd4b5ffea49ae0ba",
+        "name": "TIME",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "",
+                "tot": "date"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 390,
+        "y": 660,
+        "wires": [
+            [
+                "bc4d1d4e9c66040e"
+            ]
+        ]
+    },
+    {
+        "id": "1f790c6286d1cfa2",
+        "type": "change",
+        "z": "fd4b5ffea49ae0ba",
+        "name": "TIME",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "",
+                "tot": "date"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 390,
+        "y": 1140,
+        "wires": [
+            [
+                "bc698b9b958f1c15"
+            ]
+        ]
+    },
+    {
+        "id": "8c47f4dc9dbd208a",
+        "type": "change",
+        "z": "fd4b5ffea49ae0ba",
+        "name": "TIME",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "",
+                "tot": "date"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 510,
+        "y": 1620,
+        "wires": [
+            [
+                "82dee566794d8fcf"
+            ]
+        ]
+    },
+    {
+        "id": "1cc309746187aaac",
+        "type": "OpcUa-Client",
+        "z": "fd4b5ffea49ae0ba",
+        "endpoint": "a1f0d7db0323ab7e",
+        "action": "write",
+        "deadbandtype": "a",
+        "deadbandvalue": 1,
+        "time": 10,
+        "timeUnit": "s",
+        "certificate": "n",
+        "localfile": "",
+        "localkeyfile": "",
+        "securitymode": "None",
+        "securitypolicy": "None",
+        "folderName4PKI": "",
+        "name": "",
+        "x": 980,
+        "y": 1560,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d2efca532d2a0242",
+        "type": "OpcUa-Client",
+        "z": "fd4b5ffea49ae0ba",
+        "endpoint": "a1f0d7db0323ab7e",
+        "action": "write",
+        "deadbandtype": "a",
+        "deadbandvalue": 1,
+        "time": 10,
+        "timeUnit": "s",
+        "certificate": "n",
+        "localfile": "",
+        "localkeyfile": "",
+        "securitymode": "None",
+        "securitypolicy": "None",
+        "folderName4PKI": "",
+        "name": "",
+        "x": 980,
+        "y": 600,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6f4c5d9bcfd9c087",
+        "type": "s7 endpoint",
+        "transport": "iso-on-tcp",
+        "address": "192.168.0.252",
+        "port": "102",
+        "rack": "0",
+        "slot": "1",
+        "localtsaphi": "01",
+        "localtsaplo": "00",
+        "remotetsaphi": "01",
+        "remotetsaplo": "00",
+        "connmode": "rack-slot",
+        "adapter": "",
+        "busaddr": "",
+        "cycletime": "1000",
+        "timeout": "3000",
+        "name": "S7-1500 ",
+        "vartable": [
+            {
+                "addr": "DB3,INT2",
+                "name": "IOT_INT"
+            },
+            {
+                "addr": "DB3,REAL4",
+                "name": "IOT_REAL"
+            },
+            {
+                "addr": "DB3,X0.0",
+                "name": "IOT_BOOL"
+            }
+        ]
+    },
+    {
+        "id": "08630897d509378a",
+        "type": "OpcUa-Endpoint",
+        "endpoint": "opc.tcp://192.168.0.252:4840",
+        "secpol": "None",
+        "secmode": "NONE",
+        "login": false
+    },
+    {
+        "id": "0debae5f533cb85b",
+        "type": "modbus-client",
+        "name": "ModbusServerSettings",
+        "clienttype": "tcp",
+        "bufferCommands": true,
+        "stateLogEnabled": false,
+        "queueLogEnabled": false,
+        "tcpHost": "192.168.0.252",
+        "tcpPort": "503",
+        "tcpType": "DEFAULT",
+        "serialPort": "/dev/ttyUSB",
+        "serialType": "RTU-BUFFERD",
+        "serialBaudrate": "9600",
+        "serialDatabits": "8",
+        "serialStopbits": "1",
+        "serialParity": "none",
+        "serialConnectionDelay": "100",
+        "unit_id": 2,
+        "commandDelay": 1,
+        "clientTimeout": 5500,
+        "reconnectOnTimeout": false,
+        "reconnectTimeout": 1000,
+        "parallelUnitIdsAllowed": false
+    },
+    {
+        "id": "a1f0d7db0323ab7e",
+        "type": "OpcUa-Endpoint",
+        "endpoint": "opc.tcp://localhost:4840",
+        "secpol": "None",
+        "secmode": "None",
+        "login": false
+    }
+]
