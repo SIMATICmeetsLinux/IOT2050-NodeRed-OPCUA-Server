@@ -54,7 +54,7 @@ For the application some packages are required:
 - node-red-contrib-modbus (V 5.14.1)
 - node-red-contrib-opcua (V 0.2.265)
 
-The packages are already installed on image version 1.1.1. If not, they can be installed as follows: Open a browser on your PC connected to the IOT2050 and open the URL `http://<IP of the IOT2050>:1880/`.
+The packages are already installed on image version 1.2.1. If not, they can be installed as follows: Open a browser on your PC connected to the IOT2050 and open the URL `http://<IP of the IOT2050>:1880/`.
 
     Menu -> Manage palette -> Switch to the tab "Install" -> Search for the package -> Click install
 
