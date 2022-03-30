@@ -20,7 +20,7 @@
 ## **Download the TIA Portal Project-File**
 
 - TIA-Portal v16: [OPCUA.zap16](../src/OPCUA_V16.zap16)
-- TIA-Portal v17: -
+- TIA-Portal v17: [OPCUA.zap17](../src/OPCUA_V17.zap17)
 
 ## **Use of the provided TIA portal project**
 
