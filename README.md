@@ -1,6 +1,6 @@
-# **IOT2050 CREATE-OPC-UA-SERVER**
+# **IOT2050 Node-Red OPCUA-Server**
 
-- [**IOT2050 CREATE-OPC-UA-SERVER**](#iot2050-create-opc-ua-server)
+- [**IOT2050 Node-Red OPCUA-Server**](#iot2050-node-red-opcua-server)
   - [**Overview**](#overview)
     - [**Used Components**](#used-components)
     - [**Goal**](#goal)

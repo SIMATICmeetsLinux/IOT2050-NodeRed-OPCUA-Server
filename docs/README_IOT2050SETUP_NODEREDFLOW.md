@@ -44,7 +44,7 @@ The following illustrations show the complete Node-RED flow needed to read data 
 
 ## **Node-Red**
 
-On the Example Image version 1.1.1 (used in this manual) node-Red is already preinstalled and autostart is enabled. To access it, open a browser on your PC connected to the IOT2050 and open the URL `http://<IP of the IOT2050>:1880/`.
+On the Example Image version 1.2.1 (used in this manual) node-Red is already preinstalled and autostart is enabled. To access it, open a browser on your PC connected to the IOT2050 and open the URL `http://<IP of the IOT2050>:1880/`.
 
 ## **Required packages**
 
