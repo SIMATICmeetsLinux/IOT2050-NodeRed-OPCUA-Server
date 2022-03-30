@@ -1,6 +1,6 @@
 # **IOT2050 Node-Red OPCUA-Server**
 
-- [**IOT2050 Node-Red OPCUA-Server**](#iot2050-noder-red-opcua-server)
+- [**IOT2050 Node-Red OPCUA-Server**](#iot2050-node-red-opcua-server)
   - [**Overview**](#overview)
     - [**Used Components**](#used-components)
     - [**Goal**](#goal)
